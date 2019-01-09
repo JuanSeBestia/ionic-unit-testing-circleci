@@ -19,9 +19,6 @@ addons:
     packages:
     - google-chrome-stable
 
-install:
-  - npm ci
-  
 before_script:
   - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
