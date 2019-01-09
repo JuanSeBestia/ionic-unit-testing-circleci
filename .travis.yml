@@ -11,8 +11,10 @@ branches:
 before_script:
   - npm install -g firebase-tools
   - npm install -g ionic@4.4.0 cordova@8.1.2
+  - ionic info
 
 script:
+  - npm run tslint
   - ionic build --prod
 
 after_success:
