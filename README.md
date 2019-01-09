@@ -2,6 +2,7 @@
 
 # Ionic Unit Testing Example CI
 
+## TODO ADD CI/CD
 **This repository is an example project that gives guidance on setting up your Ionic application for unit testing and end-to-end (E2E) testing.** We have been told the folks at Ionic will be adding testing features to new projects in the future. But until then, feel free to borrow from this project as needed.
 
 Special thanks to all of the contributors. With the exception of the Ionic team's updates to the framework, this project is stable. If you have a suggestion, feel free to update code and make a pull request. Find a problem or bug, feel free to file a detailed issue. 
