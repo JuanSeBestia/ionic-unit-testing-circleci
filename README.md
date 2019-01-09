@@ -1,10 +1,12 @@
 > **2018-03-28:** We have a [pull request for updating to Karma 2](https://github.com/ionic-team/ionic-unit-testing-example/pull/87) awaiting review. If you can take the time to install this update and let us know if it works for you, that would be very helpful. Comments are welcome!
 
-# Ionic Unit Testing Example
+# Ionic Unit Testing Example CI
 
 **This repository is an example project that gives guidance on setting up your Ionic application for unit testing and end-to-end (E2E) testing.** We have been told the folks at Ionic will be adding testing features to new projects in the future. But until then, feel free to borrow from this project as needed.
 
 Special thanks to all of the contributors. With the exception of the Ionic team's updates to the framework, this project is stable. If you have a suggestion, feel free to update code and make a pull request. Find a problem or bug, feel free to file a detailed issue. 
+
+This usage Circle CI an Travis CI to automatice tests
 
 ## How to Configure Your Ionic Application for Testing
 

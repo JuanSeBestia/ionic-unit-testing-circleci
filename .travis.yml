@@ -1,0 +1,40 @@
+#.travis.yml
+
+language: node_js
+node_js:
+  - "8.11.3"
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+  - node_modules
+
+addons:
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
+
+before_script:
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - npm install -g ionic@4.4.0 cordova@8.1.2 firebase-tools
+  - ionic info
+
+script:
+  - npm run tslint
+  - npm run test-ci
+  - npm run e2e
+  - npm run build:prod
+
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
+
+notifications:
+  email:
+    on_failure: change
