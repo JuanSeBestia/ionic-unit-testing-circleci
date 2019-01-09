@@ -17,7 +17,9 @@ before_script:
 
 script:
   - npm run tslint
-  - ionic build --prod
+  - npm run test-ci
+  - npm run e2e
+  - npm run build:prod
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN
