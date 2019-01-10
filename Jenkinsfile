@@ -14,7 +14,8 @@ pipeline {
 
        stage('NPM Setup') {
           steps {
-             sh 'npm install'
+            echo "Branch is ${env.BRANCH_NAME}..."
+            sh 'npm install'
          }
        }
 
