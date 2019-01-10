@@ -20,32 +20,39 @@ pipeline {
 
        stage('IOS Build') {
           steps {
-             sh 'ionic cordova build ios --release'
+                
+              // sh 'ionic cordova build ios --release'
+              echo "IOS BUILD"
              
           }
        }
 
        stage('Android Build') {
           steps {
-               sh 'ionic cordova build android --release'
-               
+              // sh 'ionic cordova build android --release'
+              echo "Android build" 
           }
        }
 
        stage('APK Sign') {
           steps {
-            // sh 'jarsigner -storepass your_password -keystore keys/yourkey.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk nameApp'
-              echo "Android"
+              // sh 'jarsigner -storepass your_password -keystore keys/yourkey.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk nameApp'
+              echo "Android SING"
           }
        }
 
+        stage('Stage Web Build') {
+            steps {
+                sh 'npm run build:prod'
+            }
+        }
 
-
-      stage('Stage Web Build') {
-          steps {
-              sh 'npm run build --prod'
-          }
-       }
+        stage('Stage test') {
+            steps {
+                sh 'npm run build --prod'
+                sh 'npm run tslint'
+            }
+        }
 
         stage('Publish Firebase Web') {
           steps {
