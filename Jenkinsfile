@@ -24,39 +24,32 @@ pipeline {
 
        stage('IOS Build') {
           steps {
-                
-              // sh 'ionic cordova build ios --release'
-              echo "IOS BUILD"
+             sh 'ionic cordova build ios --release'
              
           }
        }
 
        stage('Android Build') {
           steps {
-              // sh 'ionic cordova build android --release'
-              echo "Android build" 
+               sh 'ionic cordova build android --release'
+               
           }
        }
 
        stage('APK Sign') {
           steps {
-              // sh 'jarsigner -storepass your_password -keystore keys/yourkey.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk nameApp'
-              echo "Android SING"
+            // sh 'jarsigner -storepass your_password -keystore keys/yourkey.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk nameApp'
+              echo "Android"
           }
        }
 
-        stage('Stage Web Build') {
-            steps {
-                sh 'npm run build:prod'
-            }
-        }
 
-        stage('Stage test') {
-            steps {
-                sh 'npm run build --prod'
-                sh 'npm run tslint'
-            }
-        }
+
+      stage('Stage Web Build') {
+          steps {
+              sh 'npm run build --prod'
+          }
+       }
 
         stage('Publish Firebase Web') {
           steps {
