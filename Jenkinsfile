@@ -54,7 +54,7 @@ pipeline {
         echo 'Publish Android'
       }
     }
-    stage('') {
+    stage('msg') {
       steps {
         echo 'todo ok'
       }
